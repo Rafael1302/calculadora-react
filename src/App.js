@@ -72,7 +72,10 @@ export default function App (){
     width: 300,
     border: '1px solid #000',
     borderRadius: '15px',
-    overflow: 'hidden'
+    overflow: 'hidden',
+    backgroundColor: 'lightGray',
+    marginTop: '5%',
+    marginLeft: '40%'
   }
 
   const buttonsCss = {
@@ -93,7 +96,7 @@ export default function App (){
 
   const screenOpCss = {
     fontSize: 25,
-    color: '#fff',
+    color: 'lightGray',
     height: 20,
   }
 
@@ -147,8 +150,6 @@ export default function App (){
             {Btn('.', ()=>addNumbScreen('.'))}
             {Btn('<=', ()=>Operation('bs'))}
             {Btn('=', ()=>Operation('='))}
-
-
         </div>
       </div>
     </>
