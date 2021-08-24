@@ -23,7 +23,7 @@ export default function App (){
   }
 
   const addNumbScreen=(n)=>{
-    if(n === '+' || n === '-' || n === '*' || n === '/' && operator){
+    if((n === '+' || n === '-' || n === '*' || n === '/') && operator){
       console.log("=-*/")
       setOperator(false)
       setScreenValue(result + n)
@@ -47,7 +47,7 @@ export default function App (){
   }
 
   const Operation = (op) =>{
-    if(op == 'bs'){
+    if(op === 'bs'){
       let vscreen = screenValue
       vscreen = vscreen.substring(0,(vscreen.length-1))
       setScreenValue(vscreen)
@@ -70,7 +70,9 @@ export default function App (){
     alignitems: 'center',
     flexDirection: 'column',
     width: 300,
-    border: '1px solid #000'
+    border: '1px solid #000',
+    borderRadius: '15px',
+    overflow: 'hidden'
   }
 
   const buttonsCss = {
@@ -109,13 +111,20 @@ export default function App (){
     color: '#fff',
     borderColor: '#000',
     textAlign: 'center',
-    outline: 'none'
+    outline: 'none',
+  }
+
+  const h3Css = {
+    textAlign: 'center',
+    fontFamily: 'impact',
+    fontWeight: 10,
+    fontSize: '150%',
   }
 
   return(
     <>
       <div style={containerCss}>
-        <h3>Rafael's React Calculator</h3>
+        <h3 style={h3Css}>Rafael's React Calculator</h3>
           {Screen(screenValue, result)}
         <div style={buttonsCss}>
             {Btn('AC', deleteMemory)}
