@@ -8,10 +8,12 @@ export default function App (){
   const [operator, setOperator] = useState(false)
 
   const Screen = (value, res) => {
-    <div style={screenCss}>
+    return(
+      <div style={screenCss}>
         <span style={screenOpCss}>{value}</span>
         <span style={screenResCss}>{res}</span>
-    </div>
+      </div>
+      )
   }
 
   const Btn = (label, onClick) => {
